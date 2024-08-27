@@ -13,3 +13,15 @@ The script does not account for holidays; its just a template script.\
 \
 FOR USE WITH CRON JOBS:\
 \
+This script will run on a schedule using cronjobs -- sending a message at 06:30 am PST every weekday to signal the stock
+market opening, and again at 1300 PST to signal the market closing.
+
+### The Cron Expression:
+
+30 6,13 * * 1-5\
+|  |  | |  |\
+|  |  | |  +----- Day of the week (1-5 = Monday to Friday)\
+|  |  | +------- Any month\
+|  |  +--------- Any day of the month\
+|  +------------ Hours (6 and 13)\
++--------------- Minutes (30)
